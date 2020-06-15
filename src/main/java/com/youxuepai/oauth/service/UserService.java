@@ -35,6 +35,8 @@ public class UserService implements UserDetailsService {
       throw new UsernameNotFoundException("the user is not found");
     }
     List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+    //此处可以根据自己的业务添加权限,这里就写死了
+    authorities.add(new SimpleGrantedAuthority("admin"));
     return new org.springframework.security.core.userdetails.User(username, userInfo.getPassword(),
         authorities);
   }
