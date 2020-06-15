@@ -23,8 +23,7 @@ public class JwtTokenConfig {
   @Bean
   public JwtAccessTokenConverter jwtAccessTokenConverter() {
     JwtAccessTokenConverter accessTokenConverter = new JwtAccessTokenConverter();
-    //秘钥
-    accessTokenConverter.setSigningKey("youxuepai");
+    accessTokenConverter.setSigningKey("token");
     return accessTokenConverter;
   }
 
